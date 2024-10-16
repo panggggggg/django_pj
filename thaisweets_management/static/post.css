@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #FFF2B2;
+}
+
+/* Container for the whole layout */
+.container {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Form Section Styles */
+.post-section {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #ff8497;
+    width: 60%;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px #00000033;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.post-section:hover {
+    transform: translateY(-10px); /* Hover animation */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.5s;
+    background-color: #fc6c8488;
+}
+
+.post-section h1 {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #000;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.post-form {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    
+}
+
+.post-form label {
+    font-size: 18px;
+    color: #000;
+}
+
+.post-form label:hover {
+    font-size: 18px;
+    text-decoration: underline;
+    transition: text-decoration 0.5s;
+}
+
+.post-form input[type="text"], 
+.post-form textarea, 
+.post-form input[type="file"] {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    width: 60%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.post-btn {
+    padding: 10px 20px;
+    background-color: #FFF2B2;
+    color: #FC6C85;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+.post-btn:hover{
+    transform: translateY(-5px); /* Hover animation */
+}
+
+.h1{
+    color: #FC6C85;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #fff5b0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #fff5b0;
+    position: relative;
+}

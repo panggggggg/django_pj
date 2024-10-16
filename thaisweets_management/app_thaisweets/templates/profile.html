@@ -1,0 +1,77 @@
+{% extends 'components/layout.html' %}
+{%load static%}
+{% block title %}THAI THAI{% endblock %}
+{% block css %} <link rel="stylesheet" href="{% static 'profile.css' %}">{% endblock %}
+{% block content %}
+{% include 'components/nav.html'%}
+<div class="container">
+    <div class="edit-section">
+        <h2>EDIT Pofile ({{user.username}})</h2>
+        <form class="profile-form" action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %} 
+            {{ form.non_field_errors}}
+                             
+            <!-- !Check if userprofile instance has an image -->
+            {% if user.userprofile.image %}
+                <!-- Display the current profile image -->
+                <img id="current-image" src="{{ user.userprofile.image.url }}" alt="Profile Image" style="max-width: 200px; max-height: 200px;">
+            {% else %}
+                <div>
+                    <!-- Image preview will be shown here -->
+                    <div id="no-image-message" class="profile-picture">                                
+                        <p>No profile image available</p>
+                    </div>
+                    <img id="image-preview" style="max-width: 200px; max-height: 200px; display: none;" alt="Image Preview">
+                </div>
+            {% endif %}
+            <div>
+                <!-- File input for image upload -->
+                {{ extend_form.image }}
+            </div>
+            
+            <!-- JavaScript to preview the uploaded image -->
+            <script type="text/javascript">
+                document.getElementById("id_image").addEventListener("change", function(event) {
+                    var imageInput = event.target;
+                    var reader = new FileReader(); 
+                    var preview = document.getElementById("image-preview");
+                    var currentImage = document.getElementById("current-image");
+                    var noImageMessage = document.getElementById("no-image-message");
+                    
+                    // When the file is loaded, set the image preview
+                    reader.onload = function(e) {
+                        preview.src = e.target.result;
+                        preview.style.display = 'block';  // Show the preview
+                        noImageMessage.style.display = 'none';  // Hide 'No profile image available' message
+                    };
+            
+                    // If there's an image selected, preview it
+                    if (imageInput.files && imageInput.files[0]) {
+                        reader.readAsDataURL(imageInput.files[0]);
+                    }
+                });
+            </script>
+        
+            
+            <div class="input-group" style="padding-top: 10px;">
+                {{ base_form.first_name.label_tag }}
+                {{ base_form.first_name }}
+                {{ base_form.first_name.errors }}
+            </div>
+            <div class="input-group">
+                {{ base_form.last_name.label_tag }}
+                {{ base_form.last_name }}
+                {{ base_form.last_name.errors }}
+            </div>
+            <div class="input-group">
+                {{extend_form.age.label_tag}}
+                {{extend_form.age}}
+                {{extend_form.age.errors}}
+            </div>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+

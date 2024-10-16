@@ -1,0 +1,95 @@
+{% extends 'components/layout.html' %}
+{%load static%}
+{% block title %}THAI THAI{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'blog.css' %}">{% endblock %}
+{% block content %}
+{% include 'components/nav.html'%}
+<div class="container">
+    <div class="post">
+        {% if user.is_staff or user == blog.user %}
+            <button class="delete">
+                <a href="{% url 'post_delete' blog.post_id %}">Delete</a>
+            </button>
+        {% endif %}
+        <div class="photo">
+            <h1 class="post-title">{{ blog.title }}</h1>
+            <div class="post-image">
+                {% if blog.image %}
+                    <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                {% else %}
+                    <img src="/static/images/default-image.jpg" alt="Default Image">
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="post-body">
+                <p>{{ blog.body }}</p>
+            </div>
+
+            <p><strong>Total Shares:</strong> {{ total_shares }} times</p>
+
+            <div class="post-category">
+                <strong>Category:</strong>
+                <ul>
+                    {% for category in blog.category_set.all %}
+                        <li>{{ category.name }}</li>
+                    {% empty %}
+                        <li>No categories</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="comment">
+            <h3>Comments:</h3>
+            {% if comments %}
+                <ul>
+                    {% for comment in comments %}
+                        <li>
+                            <p><strong>{{ comment.user.username }}:</strong> {{ comment.comment }}</p>
+                            <p><small>Posted on: {{ comment.created_at|date:"F j, Y, g:i a" }}</small></p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No comments yet. Be the first to comment!</p>
+            {% endif %}
+        </div>
+
+        <div class="content">
+            <div class="post-meta">
+                <p><strong>Posted by:</strong> {{ blog.user.first_name }} {{ blog.user.last_name }}</p>
+                <p><strong>Posted on:</strong> {{ blog.created_at|date:"F j, Y, g:i a" }}</p>
+            </div>
+
+            <a href="{% url 'post_comments' blog.post_id %}">
+                <button class="comment-button">View/Add Comments</button>
+            </a>
+
+            <a href="{% url 'blog' %}" class="back-link">Back to all blogs</a>
+        </div>
+
+        <div class="share-buttons content">
+            <h3>Share this post:</h3>
+            <button class="share-button" onclick="shareOnFacebook('{{ request.build_absolute_uri }}', '{{ blog.post_id }}')">Share on Facebook</button>
+
+            <form id="share-form-{{ blog.post_id }}" method="POST" action="{% url 'share_post' blog.post_id %}">
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function shareOnFacebook(url, postId) {
+        const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        document.getElementById(`share-form-${postId}`).submit();
+        window.open(facebookShareUrl, '_blank');
+    }
+</script>
+
+{% endblock %}
+
+
+

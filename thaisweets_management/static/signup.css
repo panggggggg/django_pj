@@ -1,0 +1,147 @@
+*,
+*:before,
+*:after{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+body{
+background-color: #fff5b0;
+}
+.background{
+width: 430px;
+height: 570px;
+position: absolute;
+transform: translate(-50%,-50%);
+left: 50%;
+top: 50%;
+}
+.background .shape{
+height: 200px;
+width: 200px;
+position: absolute;
+border-radius: 50%;
+}
+/* .shape:first-child{
+background: linear-gradient(
+  #1845ad,
+  #23a2f6
+);
+left: -80px;
+top: -80px;
+}
+.shape:last-child{
+background: linear-gradient(
+  to right,
+  #ff512f,
+  #f09819
+);
+right: -30px;
+bottom: -80px;
+} */
+form{
+height: auto;
+width: 450px;
+background-color:#ff8497;
+position: absolute;
+align-items: center;
+transform: translate(-50%,-50%);
+top: 87%;
+left: 50%;
+border-radius: 10px;
+backdrop-filter: blur(10px);
+border: 2px solid rgba(255,255,255,0.1);
+box-shadow: 0 0 80px #836e6e98;
+padding: 40px 35px;
+}
+form *{
+font-family: 'Poppins',sans-serif;
+align-items: center;
+color: #ffffff;
+padding: 0.5px;
+letter-spacing: 0.5px;
+outline: none;
+border: none;
+}
+form h3{
+font-size: 32px;
+font-weight: 500;
+line-height: 42px;
+text-align: center;
+}
+
+label{
+display: block;
+margin-top: 30px;
+font-size: 16px;
+font-weight: 500;
+}
+input{
+display: block;
+height: 40px;
+width: 100%;
+background-color: rgba(255,255,255,0.07);
+border-radius: 3px;
+padding: 0 10px;
+margin-top: 2px;
+font-size: 14px;
+font-weight: 300;
+}
+::placeholder{
+color: #e5e5e5;
+}
+button{
+margin-top: 50px;
+width: 100%;
+background-color: #ffffff;
+color: #080710;
+padding: 15px 0;
+font-size: 18px;
+font-weight: 600;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.nav-bar {
+background-color: #FC6C85;
+border-bottom-left-radius: 30px;
+border-bottom-right-radius: 30px;
+padding: 20px;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+}
+
+.nav-links a {
+border: #ff8497;
+border-width: 10px;
+border-radius: 20px;
+padding: 10px 15px;
+margin: 0 15px;
+font-family: "Handlee", cursive;
+font-weight: 400;
+font-style: normal;
+color: #fff5b0;
+text-decoration: none;
+font-size: 18px;
+transition: color 1s;
+transition: background-color 1s;
+}
+
+.nav-links a:hover {
+background-color:#fff5b0 ;
+color: #ff8497;
+}
+
+.TextIHave{
+color: #080710;
+padding: 10px;
+margin: 0 15px;
+}

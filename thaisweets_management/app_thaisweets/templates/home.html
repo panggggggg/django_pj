@@ -1,0 +1,25 @@
+{% extends 'components/layout.html' %}
+{%load static%}
+{% block title %}Home Page{% endblock %}
+{% block css %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'Home.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="Background">
+  <img src="static/image/display.jpg" alt="display" class="background-image">
+</div>
+
+<div class="header">
+  <h1><span class="thai1">THAI</span> <span class="thai2">THAI</span></h1>
+  <p class="title">Collection of Thai Sweets</p>
+  <hr class="new4">
+
+<nav class="nav-menu">
+  <a href="{% url 'signup' %}"class='signup'>Sign up</a>
+  <a href="{% url 'login' %}"class='signin'>Sign in</a>
+</nav>
+{% endblock %}

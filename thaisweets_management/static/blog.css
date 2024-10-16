@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #FFF2B2; /* Clean background */
+}
+
+.container {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 40px;
+}
+
+.delete{
+    margin-left: 850px;
+    background-color: s#ff8497;
+    color: #FFF2B2;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.delete:hover{
+    background-color: #ff0000;
+    color: #ffffff;
+    transition: background-color 1s;
+}
+.post {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #ff8497;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px #00000033;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.post:hover {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    transform: translateY(-10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.5s;
+    background-color: #fc6c8488;
+}
+
+.photo,.content, .comment {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    width: 97%;
+    max-width: 1000px;
+    background-color: #FFF2B2;
+    margin: 15px 0;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* จัดตรงกลางในแนวนอน */
+    align-items: center; /* จัดตรงกลางในแนวตั้ง (ถ้ามีความสูงแน่นอน) */
+    width: 100%;
+    max-width: 1000px;
+    background-color: #FFF2B2;
+    margin: 15px 0;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 20px;
+    color: #000;
+    font-size: 28px;
+    text-align: center;
+}
+
+
+.photo{
+    text-align: center;
+}
+
+img {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    width: 900px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(233, 4, 4, 0.1);
+}
+
+
+
+ul {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: #555;
+}
+
+.comment ul li {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 10px;
+}
+
+p {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #555;
+}
+
+a {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #555;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(39, 39, 39);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.comment-button {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #5cc561;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.8s ease;
+}
+
+.comment-button:hover {
+    background-color: #339137;
+    transform: translateY(-10px);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #4CAF50;
+}
+
+.share-buttons {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.share-button {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #1DA1F2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.8s ease;
+}
+
+.share-button.facebook:hover {
+    background-color: rgb(66, 71, 82)
+}
+
+.share-button:hover {
+    transform: translateY(-10px);
+    opacity: 0.9;
+    background-color: #194dbd;
+}

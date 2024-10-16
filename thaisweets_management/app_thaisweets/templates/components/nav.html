@@ -1,0 +1,109 @@
+{%load static%}
+<style>
+.header {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FC6C85;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px 20px;
+    width: auto;
+    box-shadow: 0 20px 40px #fc6c8427;
+    margin-block-end: 200px;
+    margin-bottom: -15.95px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    border: #ff8497;
+    border-width: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0 15px;
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff5b0;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 1s;
+    transition: background-color 1s;
+}
+
+.nav-menu a:hover{
+    background-color:#fff5b0 ;
+    color: #ff8497;
+}
+
+/* Search bar css code */
+
+  .search-bar {
+            margin: 0;
+            padding: 0;
+            font-family: "Handlee", cursive;
+            font-weight: 400;
+            font-style: normal;   
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+.search-bar input {
+            font-family: "Handlee", cursive;
+            font-weight: 400;
+            font-style: normal;
+            width: 1200px; /* ปรับความกว้างตามต้องการ */
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid lightgray;
+            font-size: 16px;
+            margin-right: 0; /* ลบ margin ขวาออกเพื่อให้ชิดกับขอบ */
+        }
+
+.search-bar button {
+            font-family: "Handlee", cursive;
+            font-weight: 400;
+            font-style: normal;
+            background-color: #fff3b0;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+            margin-right: 0; /* ลบ margin ขวาออกเพื่อให้ชิดกับขอบ */
+        }  
+
+
+</style>
+<header class="header">
+    <div class="logo">
+        <img href="{% url 'blog' %}" src= "{% static 'image/logo.jpg' %}" alt="Logo">
+    </div>
+    <nav class="nav-menu">
+        <a href="{% url 'blog' %}">Blog</a>
+        <a href="{% url 'post' %}">Post</a>
+        <a href="{% url 'search' %}">Search</a>
+        <a href="{% url 'profile' %}">Profile</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </nav>
+</header>

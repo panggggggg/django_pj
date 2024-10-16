@@ -1,0 +1,37 @@
+{% extends 'components/layout.html' %}
+{%load static%}
+{% block title %}THAI THAI{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'comment.css' %}">{% endblock %}
+{% block content %}
+{% include 'components/nav.html'%}
+
+<div class="container">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.body }}</p>
+
+    <h3>Comments ({{ comments.count }})</h3>
+    <ul>
+        {% for comment in comments %}
+        <li>
+            <p><strong>{{ comment.user.username }}:</strong> {{ comment.comment }}</p>
+            <p><small>Posted on: {{ comment.created_at|date:"F j, Y, g:i a" }}</small></p>
+        </li>
+        {% empty %}
+        <li>No comments yet. Be the first to comment!</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Add a comment</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit Comment</button>
+    </form>
+
+    <a href="{% url 'post_detail' post.post_id %}">Back to post</a>
+</div>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    background-color: #FFF2B2;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #ff8497;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.container:hover{
+    background-color: #fc6c8488;
+    transition: background-color 0.5s;
+    transform: translateY(-10px);
+}
+
+h1 {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: 36px;
+    color: #404040;
+}
+
+.post {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #ffdee0;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 2px solid #f49ca3;
+}
+
+.post img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.post p {
+    font-size: 18px;
+    color: #333;
+}
+
+ul {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    list-style-type: none;
+    padding: 0;
+    font-size: 18px;
+}
+
+ul li {
+    margin: 5px 0;
+    color: #333;
+}
+
+.comments {
+    background-color: #ffdee0;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #f49ca3;
+}
+
+.comments h3 {
+    font-size: 24px;
+    color: #404040;
+}
+
+.comments ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comments ul li {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+form {
+    margin-top: 20px;
+    background-color: #fff2b2;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #f49ca3;
+}
+
+form textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 2px solid #f49ca3;
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    resize: vertical;
+}
+
+form button {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #f49ca3;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.8s ease;
+}
+
+form button:hover {
+    background-color: #ff8497;
+    transform: translateY(-5px);
+}

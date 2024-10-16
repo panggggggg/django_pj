@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #FFF2B2;
+}
+
+.background-image {
+        object-fit: cover;
+        background-position: center;
+        height: 101vh;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+}
+
+.thai2{
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #FC6C85;
+    font-size: 70px;
+    padding: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 150px;   /* Moves down 50px on the y-axis */
+    left: 1200px;
+}
+
+.thai1{
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #473D3F;
+    padding: 20px;
+    font-size: 70px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 150px;   /* Moves down 50px on the y-axis */
+    left: 1000px;
+}
+
+.title{
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #473D3F;
+    padding: 20px;
+    font-size: 60px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 220px;   /* Moves down 50px on the y-axis */
+    left: 950px;
+}
+
+.signup, .signin {
+    text-decoration: none;
+    font-family: "Handlee", cursive;
+    border-radius: 30px;
+    border-width: 10px;
+    font-weight: 400;
+    font-style: normal;
+    color: #FC6C85;
+    padding: 20px;
+    font-size: 30px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 430px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.signup {
+    left: 1250px;
+    background-color: #FFF2B2;
+}
+
+.signin {
+    left: 1405px;
+    background-color: #FFF2B2;
+}
+
+.signup:hover, .signin:hover {
+    background-color: #FC6C85;
+    color: #ffffff; 
+}
+
+hr.new4 {
+    width: 650px;
+    border: 3px solid #473D3F;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 400px;  
+    left: 950px;
+  }
+
+
+
+

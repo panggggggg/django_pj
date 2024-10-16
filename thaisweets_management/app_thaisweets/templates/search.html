@@ -1,0 +1,41 @@
+{% extends 'components/layout.html' %}
+{%load static%}
+{% block title %}THAI THAI{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'blog.css' %}">{% endblock %}
+{% block content %}
+<div class="nav-bar">
+    {% include 'components/nav.html'%}
+    </div>
+<div class="header" style="justify-content: right;">
+    <form method="GET" action="{% url 'search' %}"> 
+        <div class="search-bar">
+            <input name="text_search" type="search" placeholder="ค้นหา">
+            <button type="submit">Search</button>
+        </div>
+    </form>
+</div>
+
+<div class="container">
+    {% for blog in blogs %}
+    <a href="{% url 'post_detail' blog.post_id %}">
+        <div class="post">
+            <div class="post">{{ blog.title }}</div>
+            <div class="photo">
+                {% if blog.image %}
+                <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                {% else %}
+                    <img src="/static/images/default-image.jpg" alt="Default Image"> <!-- Optional default image -->
+                {% endif %}
+            </div>
+            <div class="content">{{ blog.body }}</div>
+            <div class="comment">
+                {% for category in blog.category_set.all %}
+                {{ category.name }}
+            {% endfor %}
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock %}
